@@ -25,6 +25,30 @@ module.exports = {
 			chunks: ['index'],
 			filename: 'index.html',
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/main.html',
+			inject: true,
+			chunks: ['index'],
+			filename: 'main.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/projects.html',
+			inject: true,
+			chunks: ['index'],
+			filename: 'projects.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/tasks.html',
+			inject: true,
+			chunks: ['index'],
+			filename: 'tasks.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/info.html',
+			inject: true,
+			chunks: ['index'],
+			filename: 'info.html',
+		}),
 	],
 
 	devServer: {

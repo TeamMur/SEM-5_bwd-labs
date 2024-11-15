@@ -1,0 +1,169 @@
+/* Вся страница*/
+body {
+	background-color: rgb(39, 39, 39);
+	line-height: 2;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+}
+
+/* Заголовок*/
+h1 {
+	text-align: center;
+	font-size: 48px;
+	color: rgb(255, 255, 255);
+}
+
+/*Таблица*/
+table {
+	width: 100%;
+	background-color: rgb(32, 32, 32);
+	padding: 16px;
+	padding-bottom: 0px;
+}
+
+/*Таб: шапка и стили*/
+th {
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	width: 33.33%;
+}
+
+th:nth-child(1) {
+	background-color: rgb(185, 121, 0);
+}
+th:nth-child(2) {
+	background: green;
+}
+th:nth-child(3) {
+	background: gray;
+}
+
+tr:nth-child(even) {
+	background-color: #292929;
+}
+
+/*Таб: карточки и стили*/
+td {
+	color: rgb(223, 223, 223);
+}
+
+.card {
+	text-align: center;
+	margin: 16px;
+	border-radius: 8px;
+}
+
+.card_head {
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+td:nth-child(1) .card {
+	background-color: rgb(112, 77, 12);
+	box-shadow: 4px 4px 4px rgb(37, 25, 1);
+}
+
+td:nth-child(1) .card_head {
+	background-color: rgb(196, 127, 0);
+}
+
+td:nth-child(2) .card {
+	background-color: rgb(1, 85, 1);
+	box-shadow: 4px 4px 4px rgb(0, 24, 0);
+}
+
+td:nth-child(2) .card_head {
+	background-color: green;
+}
+
+td:nth-child(3) .card {
+	background-color: rgb(75, 75, 75);
+	box-shadow: 4px 4px 4px rgb(0, 0, 0);
+}
+
+td:nth-child(3) .card_head {
+	background-color: gray;
+}
+
+/*Таб/карт: кнопки и стили*/
+.card_buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	column-gap: 4px;
+	margin-right: 16px;
+	padding-bottom: 8px;
+}
+
+input[type='checkbox'] {
+	width: 24px;
+	height: 24px;
+	opacity: 1;
+}
+
+input[type='checkbox']:hover {
+	opacity: 1;
+}
+
+.button_delete {
+	width: 24px;
+	height: 24px;
+}
+
+td:nth-child(1) .button_delete {
+	background-color: darkgoldenrod;
+}
+td:nth-child(1) .button_delete:hover {
+	background-color: orange;
+}
+td:nth-child(2) .button_delete {
+	background-color: green;
+}
+td:nth-child(2) .card .button_delete:hover {
+	background-color: rgb(0, 184, 0);
+}
+td:nth-child(3).button_delete {
+	background-color: gray;
+}
+td:nth-child(3) .button_delete:hover {
+	background-color: gainsboro;
+}
+
+/*Поле ввода*/
+form {
+	background-color: rgb(32, 32, 32);
+	text-align: center;
+	column-gap: 16px;
+	padding: 20px;
+}
+
+input[type='text'] {
+	background-color: rgb(17, 17, 17);
+	color: white;
+	width: 512px;
+	height: 64px;
+	margin-right: 16px;
+	margin-left: 16px;
+	font-size: 16px;
+	padding-left: 16px;
+	border: 2px solid white;
+}
+
+form button {
+	min-height: 64px;
+}
+
+form button:hover {
+	background-color: rgb(32, 32, 32);
+	color: white;
+}
+
+/*Поле ввода на главной стр.*/
+.main_form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 94vh;
+	width: 100vw;
+}

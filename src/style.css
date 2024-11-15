@@ -1,0 +1,371 @@
+/* Вся страница*/
+/* пк */
+body {
+	background-color: rgb(39, 39, 39);
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	overflow: hidden;
+}
+
+/* шапка */
+.menu {
+	background-color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 64px;
+	width: 100%;
+	position: fixed;
+}
+
+#menu_saturation {
+	height: 64px;
+	width: 100%;
+}
+
+.menu img {
+	margin-left: 4px;
+	width: 56px;
+}
+
+.menu_buttons {
+	padding: 4vh;
+}
+
+.menu_buttons > a {
+	text-decoration: none;
+	margin: 24px;
+	color: white;
+	font-size: 24px;
+}
+
+/* главная */
+#menu_main {
+	display: block;
+	height: 92vh;
+}
+
+.menu_block {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#menu_text {
+	margin-left: -120px; /*right ничего не меняет*/
+}
+
+#menu_title {
+	font-size: 112px;
+	text-align: right;
+}
+
+#menu_message {
+	font-size: 48px;
+}
+
+#main_img {
+	position: fixed;
+	height: 110vh;
+	bottom: 0vh; /*без этого никак*/
+	left: 50vw;
+}
+
+/* проекты */
+#projects_main {
+	color: white;
+	display: flex;
+	justify-content: center;
+	line-height: 0px;
+	margin-top: 20vh;
+}
+
+/* страница 404 */
+#error_title {
+	font-size: 160px;
+	text-align: right;
+}
+
+#error_message {
+	font-size: 48px;
+}
+
+/* страница О приложении */
+#info_title {
+	font-size: 80px;
+	text-align: right;
+}
+
+#info_message {
+	font-size: 48px;
+}
+
+/*
+320px - мобильные устройства с портретной ориентацией
+480px - мобильные устройства с ландшафтной ориентацией
+768px - планшеты
+1200px - PC
+*/
+
+/*Поле ввода: всплывающее окно*/
+#task_box {
+	background-color: rgb(32, 32, 32);
+	text-align: center;
+	column-gap: 16px;
+	padding: 20px;
+	margin-top: 40vh;
+	position: fixed;
+}
+
+#task_box > input[type='text'] {
+	background-color: rgb(17, 17, 17);
+	color: white;
+	width: 512px;
+	height: 64px;
+	margin-right: 16px;
+	margin-left: 16px;
+	font-size: 16px;
+	padding-left: 16px;
+	border: 2px solid white;
+}
+
+#task_box > button {
+	min-height: 64px;
+}
+
+#task_box > button:hover {
+	background-color: rgb(32, 32, 32);
+	color: white;
+}
+
+#dialog_bg {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.377);
+	width: 100vw;
+	height: 100vh;
+}
+
+/*Поле ввода: на странице*/
+form {
+	background-color: rgb(32, 32, 32);
+	text-align: center;
+	column-gap: 16px;
+	padding: 20px;
+}
+
+input[type='text'] {
+	background-color: rgb(17, 17, 17);
+	color: white;
+	width: 512px;
+	height: 64px;
+	margin-right: 16px;
+	margin-left: 16px;
+	font-size: 16px;
+	padding-left: 16px;
+	border: 2px solid white;
+}
+
+form button {
+	min-height: 64px;
+}
+
+form button:hover {
+	background-color: rgb(32, 32, 32);
+	color: white;
+}
+
+#burger {
+	display: none;
+	cursor: pointer;
+}
+
+@keyframes burgerAnim {
+	0% {
+		right: -200px;
+	}
+	100% {
+		right: 0px;
+	}
+}
+
+#burger_buttons {
+	animation: burgerAnim 0.4s ease;
+	position: fixed;
+	right: 0px;
+	display: none; /*flex*/
+
+	flex-direction: column;
+	background-color: black;
+	cursor: default;
+	top: 64px;
+}
+
+#burger_buttons > a {
+	color: white;
+	text-decoration: none;
+	text-align: right;
+	font-size: 24px;
+	margin: 24px;
+}
+
+/* пк правки)*/
+@media (max-width: 1700px) {
+	/* главная */
+	#menu_main {
+		display: flex;
+	}
+	#burger {
+		display: none;
+	}
+	.menu_block {
+		padding-left: 24vw;
+	}
+	#menu_text {
+		padding-right: 8px;
+	}
+
+	#menu_title {
+		font-size: 48px;
+		margin-top: 4px;
+		margin-bottom: -12px;
+	}
+
+	#menu_message {
+		font-size: 24px;
+		text-align: right;
+	}
+}
+
+/* планшет (немного превысил)*/
+@media (max-width: 832px) {
+	/* шапка */
+	.menu_buttons {
+		padding: 0px;
+		display: none;
+	}
+	#burger {
+		display: block;
+	}
+
+	.menu_buttons > a {
+		font-size: 16px;
+		margin: 10px;
+	}
+
+	/* главная */
+	#menu_main {
+		display: block;
+	}
+	.menu_block {
+		display: block;
+	}
+
+	#menu_title {
+		font-size: 48px;
+		margin-top: 4px;
+		margin-bottom: -12px;
+		text-align: left;
+	}
+
+	#menu_message {
+		font-size: 24px;
+		text-align: left;
+	}
+	#main_img {
+		position: fixed;
+		height: 72vh;
+		max-height: 512px;
+		bottom: -6vh; /*без этого никак*/
+		left: auto;
+		right: 10%;
+	}
+
+	/* страница 404 */
+	#error_title {
+		font-size: 120px;
+	}
+	#error_message {
+		font-size: 36px;
+	}
+	/* страница О приложении */
+	#info_title {
+		font-size: 60px;
+		text-align: right;
+	}
+
+	#info_message {
+		font-size: 32px;
+	}
+
+	#task_box > input[type='text'] {
+		width: 300px;
+	}
+
+	#form_box > input[type='text'] {
+		width: 300px;
+	}
+}
+
+/* телефон (немного превысил)*/
+/*пока совпадает с планшетом, т.к. нет возможности посмотреть*/
+@media (max-width: 320px) {
+	/* шапка */
+	.menu_buttons {
+		padding: 0px;
+		display: none;
+	}
+	#burger {
+		display: block;
+	}
+
+	.menu_buttons > a {
+		font-size: 16px;
+		margin: 10px;
+	}
+
+	/* главная */
+	#menu_main {
+		display: block;
+	}
+	.menu_block {
+		display: block;
+	}
+
+	#menu_title {
+		font-size: 48px;
+		margin-top: 4px;
+		margin-bottom: -12px;
+		text-align: left;
+	}
+
+	#menu_message {
+		font-size: 24px;
+		text-align: left;
+	}
+	#main_img {
+		position: fixed;
+		height: 72vh;
+		max-height: 512px;
+		bottom: -6vh; /*без этого никак*/
+		left: auto;
+		right: 10%;
+	}
+
+	/* страница 404 */
+	#error_title {
+		font-size: 100px;
+	}
+	#error_message {
+		font-size: 24px;
+	}
+	/* страница О приложении */
+	#info_title {
+		font-size: 60px;
+		text-align: right;
+	}
+
+	#info_message {
+		font-size: 32px;
+	}
+}
