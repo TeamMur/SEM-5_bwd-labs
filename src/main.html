@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Главная</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<img src="logo_dark.png" id="main_img" />
+		<div class="menu">
+			<img src="icon.png" />
+			<div class="menu_buttons">
+				<a id="mb_main" style="cursor: default; color: gray">Главная</a>
+				<a href="projects.html" id="mb_projects">Проекты</a>
+				<a href="tasks.html" id="mb_tasks">Список задач</a>
+				<a href="info.html" id="mb_info">О приложении</a>
+			</div>
+			<div id="burger">
+				<img id="burger_icon" src="burger.png" />
+				<div id="burger_buttons">
+					<a id="mb_main" style="cursor: default; color: gray">Главная</a>
+					<a href="projects.html" id="mb_projects">Проекты</a>
+					<a href="tasks.html" id="mb_tasks">Список задач</a>
+					<a href="info.html" id="mb_info">О приложении</a>
+				</div>
+			</div>
+		</div>
+		<div id="menu_saturation"></div>
+		<div id="menu_main">
+			<div class="menu_block">
+				<div id="menu_text">
+					<p id="menu_title">Лабораторная<br />работа</p>
+					<p id="menu_message">
+						Создание веб-страницы<br />ПГУТИ Юганов Тимур ПрИ-22
+					</p>
+				</div>
+				<div class="saturation"></div>
+			</div>
+		</div>
+		<script src="burger.js"></script>
+		<script src="bundle.js"></script>
+	</body>
+</html>

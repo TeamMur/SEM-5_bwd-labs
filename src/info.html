@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>О приложении</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="menu">
+			<img src="icon.png" />
+			<div class="menu_buttons">
+				<a href="main.html" id="mb_main">Главная</a>
+				<a href="projects.html" id="mb_projects">Проекты</a>
+				<a href="tasks.html" id="mb_tasks">Список задач</a>
+				<a id="mb_info" style="cursor: default; color: gray">О приложении</a>
+			</div>
+			<div id="burger">
+				<img id="burger_icon" src="burger.png" />
+				<div id="burger_buttons">
+					<a href="main.html" id="mb_main">Главная</a>
+					<a href="projects.html" id="mb_projects">Проекты</a>
+					<a href="tasks.html" id="mb_tasks">Список задач</a>
+					<a id="mb_info" style="cursor: default; color: gray">О приложении</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="menu_saturation"></div>
+
+		<div id="projects_main">
+			<div class="projects_block">
+				<p id="info_title">Лабораторная</p>
+				<p id="info_title">работа №3</p>
+				<p id="info_message">выполнена Югановым Т. П.</p>
+			</div>
+		</div>
+		<script src="burger.js"></script>
+		<script src="bundle.js"></script>
+	</body>
+</html>
