@@ -36,13 +36,13 @@
 		<h1>Список задач</h1>
 
 		<! -- таблица -->
-		<table>
+		<table id="task_table">
 			<tr>
 				<th>Задачи</th>
 				<th>В работе</th>
 				<th>Выполненные</th>
 			</tr>
-			<tr>
+			<tr id="task_pool">
 				<td>
 					<div class="card">
 						<h3 class="card_head">Заголовок</h3>
@@ -68,39 +68,7 @@
 						<h3 class="card_head">Заголовок</h3>
 						<p class="task">Текст задачи</p>
 						<div class="card_buttons">
-							<input type="checkbox" />
-							<button class="button_delete">-</button>
-						</div>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="card">
-						<h3 class="card_head">Заголовок</h3>
-						<p class="task">Текст задачи</p>
-						<div class="card_buttons">
-							<input type="checkbox" />
-							<button class="button_delete">-</button>
-						</div>
-					</div>
-				</td>
-				<td>
-					<div class="card">
-						<h3 class="card_head">Заголовок</h3>
-						<p class="task">Текст задачи</p>
-						<div class="card_buttons">
-							<input type="checkbox" />
-							<button class="button_delete">-</button>
-						</div>
-					</div>
-				</td>
-				<td>
-					<div class="card">
-						<h3 class="card_head">Заголовок</h3>
-						<p class="task">Текст задачи</p>
-						<div class="card_buttons">
-							<input type="checkbox" />
+							<input type="checkbox" checked disabled />
 							<button class="button_delete">-</button>
 						</div>
 					</div>
@@ -132,7 +100,39 @@
 						<h3 class="card_head">Заголовок</h3>
 						<p class="task">Текст задачи</p>
 						<div class="card_buttons">
+							<input type="checkbox" checked disabled />
+							<button class="button_delete">-</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="card">
+						<h3 class="card_head">Заголовок</h3>
+						<p class="task">Текст задачи</p>
+						<div class="card_buttons">
 							<input type="checkbox" />
+							<button class="button_delete">-</button>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="card">
+						<h3 class="card_head">Заголовок</h3>
+						<p class="task">Текст задачи</p>
+						<div class="card_buttons">
+							<input type="checkbox" />
+							<button class="button_delete">-</button>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="card">
+						<h3 class="card_head">Заголовок</h3>
+						<p class="task">Текст задачи</p>
+						<div class="card_buttons">
+							<input type="checkbox" checked disabled />
 							<button class="button_delete">-</button>
 						</div>
 					</div>
@@ -143,10 +143,11 @@
 		<! -- поле добавления -->
 		<form id="form_box">
 			<input id="form_input" type="text" placeholder="Новая Задача" />
-			<button>Добавить</button>
+			<button id="add_button">Добавить</button>
 		</form>
 		<script src="dialog_code.js"></script>
 		<script src="burger.js"></script>
+		<script src="task_manager.js"></script>
 		<script src="bundle.js"></script>
 	</body>
 </html>
