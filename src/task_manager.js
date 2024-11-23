@@ -1,20 +1,26 @@
-const cards = document.getElementsByClassName('card')
-
 //ПОДГОТОВКА (привязки)
-//обработчики для существующих карточек
-for (const card of cards) {
-	addDeleteEvent(card)
-	addMoveLeftEvent(card)
+function onLoad() {
+	//больше не требуется
+	// const cards = document.getElementsByClassName('card')
+	// //обработчики для существующих карточек
+	// for (const card of cards) {
+	// 	addDeleteEvent(card)
+	// 	addMoveLeftEvent(card)
+	// 	addTimeEvents(card)
+	// }
+
+	//обработчик для кнопки добавления
+	const addButton = document.getElementById('task_add_button')
+	addButton.addEventListener('click', () => {
+		addCard(0) //новая карточка всегда в 1 столбец
+	})
+
+	//кнопка на стартовом экране бесполезна, но удалять ее не правильно
+	document.getElementById('add_button').disabled = true
+
+	//первичное обновление времени
+	update_time()
 }
-
-//обработчик для кнопки добавления
-const addButton = document.getElementById('task_add_button')
-addButton.addEventListener('click', () => {
-	addCard(0) //новая карточка всегда в 1 столбец
-})
-
-//кнопка на стартовом экране бесполезна, но удалять ее не правильно
-document.getElementById('add_button').disabled = true
 
 //СОЗДАНИЕ
 //создание карточки
@@ -30,7 +36,7 @@ function createCard() {
 		text = 'Ничего не делать'
 	}
 	card.innerHTML = `
-    <h3 class="card_head">Новая задача</h3>
+    <h3 class="card_head">Новая задача<input class="time_input" placeholder="0h 0m 0s" value="1h 0m 0s"/></h3>
     <p class="task">${text}</p>
     <div class="card_buttons">
       <input type="checkbox" />
@@ -45,13 +51,15 @@ function createCard() {
 
 //ДОБАВЛЕНИЕ
 //добавление карточки
-function addCard(column, pattern) {
+import { addTimeEvents } from './time_manager'
+export function addCard(column, pattern) {
 	let newCard
 
 	if (!pattern) {
 		newCard = createCard()
 		addDeleteEvent(newCard)
 		addMoveLeftEvent(newCard)
+		addTimeEvents(newCard)
 	} else {
 		newCard = pattern
 	}
@@ -171,7 +179,7 @@ function moveLeft(card) {
 	if (next_column > 0) {
 		addCard(next_column, card)
 		//галочка
-		const cb = card.querySelector('input')
+		const cb = card.querySelector('input[type="checkbox"]')
 		if (next_column < 2) {
 			cb.checked = false
 		} else {
@@ -181,7 +189,7 @@ function moveLeft(card) {
 }
 
 function addMoveLeftEvent(card) {
-	const checkbox = card.querySelector('input')
+	const checkbox = card.querySelector('input[type="checkbox"]')
 
 	if (checkbox) {
 		checkbox.addEventListener('click', () => {
@@ -189,3 +197,25 @@ function addMoveLeftEvent(card) {
 		})
 	}
 }
+
+//сигналы
+import { savePage } from './save_manager'
+import { loadPage } from './save_manager'
+import { update_time } from './time_manager'
+if (window.location.pathname === '/tasks.html') {
+	//'после разгрузки страницы' (после закрытия или перезагрузки)
+	window.addEventListener('beforeunload', () => {
+		savePage(document)
+	})
+
+	//'при загрузке контента'
+	document.addEventListener('DOMContentLoaded', () => {
+		loadPage(document)
+		//привязка слушателей после загрузки
+		onLoad()
+	})
+}
+//обновление раз в секунду
+setInterval(() => {
+	update_time(document)
+}, 1000)

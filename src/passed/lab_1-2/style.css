@@ -117,13 +117,22 @@ td:nth-child(1) .button_delete {
 td:nth-child(1) .button_delete:hover {
 	background-color: orange;
 }
+td:nth-child(1) .time_input {
+	background-color: darkgoldenrod;
+}
 td:nth-child(2) .button_delete {
+	background-color: green;
+}
+td:nth-child(2) .time_input {
 	background-color: green;
 }
 td:nth-child(2) .card .button_delete:hover {
 	background-color: rgb(0, 184, 0);
 }
 td:nth-child(3).button_delete {
+	background-color: gray;
+}
+td:nth-child(3) .time_input {
 	background-color: gray;
 }
 td:nth-child(3) .button_delete:hover {

@@ -16,6 +16,7 @@ body {
 	height: 64px;
 	width: 100%;
 	position: fixed;
+	z-index: 10;
 }
 
 #menu_saturation {
@@ -116,6 +117,7 @@ body {
 	padding: 20px;
 	margin-top: 40vh;
 	position: fixed;
+	z-index: 3;
 }
 
 #task_box > input[type='text'] {
@@ -144,6 +146,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.377);
 	width: 100vw;
 	height: 100vh;
+	z-index: 2;
 }
 
 /*Поле ввода: на странице*/
@@ -180,6 +183,10 @@ form button:hover {
 	cursor: pointer;
 }
 
+h1 {
+	min-width: 360px;
+}
+
 @keyframes burgerAnim {
 	0% {
 		right: -200px;
@@ -209,6 +216,40 @@ form button:hover {
 	margin: 24px;
 }
 
+/*вводилки времени*/
+/* шапка */
+.card_head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	min-width: 150px;
+}
+
+/* заголовок */
+.card_head h3 {
+	flex-grow: 1;
+	text-align: center;
+	margin: 0;
+}
+
+/* вводилка времени */
+.time_input {
+	color: white;
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
+	width: 80px;
+	border: none;
+	outline: none;
+	text-align: center;
+}
+.time_input::placeholder {
+	color: white;
+}
+.time_input:focus::placeholder {
+	color: transparent;
+}
 /* пк правки)*/
 @media (max-width: 1700px) {
 	/* главная */
@@ -237,8 +278,25 @@ form button:hover {
 	}
 }
 
+@media (max-width: 1120px) {
+	/*вводилки времени*/
+	/* шапка */
+	.card_head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: 72px;
+	}
+
+	.time_input {
+		position: relative;
+		margin-top: -6px;
+	}
+}
+
 /* планшет (немного превысил)*/
-@media (max-width: 832px) {
+@media (max-width: 880px) {
 	/* шапка */
 	.menu_buttons {
 		padding: 0px;
